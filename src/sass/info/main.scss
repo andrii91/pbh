@@ -1,0 +1,1025 @@
+@import 'variables';
+
+*{
+  outline: none;
+}
+a:focus, a:hover, input:focus, input:hover {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  @import 'MediaQueries/main';
+  overflow-x: hidden;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline-block;
+    margin-right: 50px;
+    &:last-child {
+      margin-right: 0;
+      float: right;
+    }
+    a {
+      color: #000000;
+      font-family: "Futura PT - Demi";
+      font-size: 12px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: left;
+      text-transform: uppercase;
+      font-style: normal;
+      letter-spacing: 0.02px;
+      line-height: normal;
+      padding-bottom: 5px;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      +a {
+        display: block;
+        text-align: center;
+      }
+      &:before {
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: #e13838;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        transition: 1s;
+        opacity: 0;
+      }
+      &:hover {
+        &:before {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      float: right;
+          display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+      &.lang {
+        max-width: inherit;
+        float: none;
+        margin-right: 30px;
+        li {
+          a.active {
+            color: #e13838;
+          }
+        }
+      }
+      li {
+        display: inline-block;
+        margin-right: 0;
+        margin-left: 20px;
+        a {
+          &.call-btn {
+            color: #000000;
+            font-family: "Futura PT - Demi";
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            text-align: center;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 10px 20px 12px;
+            border: 2px solid #000000;
+            transition: .3s;
+            vertical-align: middle;
+            &:before {
+              display: none;
+            }
+            &:hover {
+              background: #000;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+  transition: .3s;
+  .logo {
+    display: inline-block;
+    transition: .3s;
+    
+  }
+  img {
+    transition: .3s;
+    display: inline-block;
+    width: 100%;
+    max-width: 165px;
+  }
+  &.fixed {
+   padding: 10px 0; 
+    img {
+      max-width: 110px;
+    }
+  }
+}
+
+.head {
+  padding: 114px 0 40px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow-x: hidden;
+  &.success {
+    background: url('../images/sbg.jpg') no-repeat center;
+    height: calc(100vh - 52px);
+    background-size: cover;
+    position: relative;
+    min-height: 585px;
+    .logo {
+      text-align: center;
+      display: block;
+//      margin-bottom: 100px;
+      z-index: 99;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      img {
+        max-width: 165px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.title-small {
+  color: #e13838;
+font-family: "Futura PT";
+font-size: 24px;
+font-weight: 500;
+font-style: normal;
+letter-spacing: normal;
+line-height: normal;
+text-align: left;
+}
+
+.head-img {
+  position: relative;
+  img {
+    width: 43.906vw;
+  }
+}
+
+.head-item {
+  max-width: 580px;
+  h1 {
+    color: #222222;
+    font-family: "Futura PT - Demi";
+    font-size: 49px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    line-height: 1.2;
+  }
+  p {
+    color: #222222;
+    font-family: "Futura PT";
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 32px;
+    text-align: left;
+    max-width: 505px;
+    margin-bottom: 0;
+  }
+  margin-bottom: 70px;
+}
+
+.head-bottom {
+  max-width: 555px;
+  .title {
+    color: #222222;
+    font-family: "Futura PT - Demi";
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;
+    text-align: left;
+    margin-bottom: -10px;
+  }
+  img {
+    max-width: 100%;
+  }
+  .form {
+    .order-btn {
+      line-height: 32px;
+    }
+  }
+}
+
+.form {
+  margin-top: 10px;
+  .label {
+    color: #4f4f4f;
+    font-family: "Futura PT";
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;
+    text-align: left;
+    font-style: normal;
+    letter-spacing: 0.02px;
+    margin-bottom: 20px;
+    position: relative;
+    input {
+      color: #000000;
+      font-family: "Futura PT";
+      font-size: 18px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 30px;
+      text-align: left;
+      padding: 18px 40px;
+      background-color: #fff;
+      border: 2px solid #333333;
+      display: block;
+      width: 100%;
+      &[name='phone'] {
+        padding-left: 54px;
+        background-image: url('../images/call_icon.svg');
+        background-repeat: no-repeat;
+        background-position: 27px center;
+        background-size: 14px;
+      }
+      &[name='name'] {
+        padding-left: 54px;
+        background-image: url('../images/name_icon.svg');
+        background-repeat: no-repeat;
+        background-position: 27px center;
+        background-size: 14px;
+      }
+      
+    }
+  }
+}
+
+.order-btn {
+  display: inline-block;
+  vertical-align: middle;
+  transition: .3s;
+  color: #ffffff;
+  font-family: "Futura PT - Demi";
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #e13838;
+      padding: 18px 40px;
+  width: 100%;
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border: 2px solid #e13838;
+  &:hover {
+    color: #fff;
+    border: 2px solid #222222;
+    transform: translateY(5%);
+  }
+}
+
+.play-btn {
+  width: 86px;
+height: 86px;
+  width: 4.479vw;
+height: 4.479vw;
+background-color: #e13838;
+  border-radius: 50%;
+  position: absolute;
+  left: 20.260vw;
+  bottom: 11.042vw;
+  cursor: pointer;
+  transition: .3s;
+  img {
+    width: 100%;
+    position: relative;
+    z-index: 99;
+  }
+/*  &:before {
+    content: "";
+    border: 7.5px solid transparent;
+    border-left: 13.5px solid #ffeaeb;
+    width: 13px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 7px);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 12;
+  }*/
+  &:after {
+    content: "";
+    width: 116px;
+    height: 116px;
+    width: 6.042vw;
+    height: 6.042vw;
+    background-color: #e13838;
+    opacity: 0.3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+        animation: pulse 1.5s infinite;
+  }
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(225, 56, 56, 1);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(225, 56, 56, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(225, 56, 56, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(225, 56, 56, 1);
+    box-shadow: 0 0 0 0 rgba(225, 56, 56, 1);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(225, 56, 56, 0);
+    box-shadow: 0 0 0 10px rgba(225, 56, 56, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(225, 56, 56, 0);
+    box-shadow: 0 0 0 0 rgba(225, 56, 56, 0);
+  }
+}
+
+
+.about {
+  padding: 135px 0 65px;
+  
+}
+
+.h2-title {
+  color: #000000;
+  font-family: "Futura PT - Demi";
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.about-item {
+  margin-top: 115px;
+  background-color: #faefef;
+  background-image: url('../images/2435trf.png');
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 86px;
+  .img {
+    position: relative;
+      min-height: 115px;
+    span {
+      position: absolute;
+      min-height: 228px;
+      top: -130px;
+      left: 0;
+      width: 100%;
+  display: flex;
+    }
+    img {
+      margin-top: auto;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+  }
+  
+  .title {
+    color: #000000;
+    font-family: "Futura PT - Demi";
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  p {
+    color: #000000;
+    font-family: "Futura PT";
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.subjects-items {
+      display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border: 2px solid #000000;
+  
+  .item {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    padding-top: 1.979vw;
+    padding-left: 2.813vw;
+    padding-right: 2.813vw;
+    position: relative;
+    min-height: 235px;
+    .img {
+//      width: 289px;
+//      height: 224px;
+      /*width: 15.052vw;
+      height: 11.667vw;*/
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+         display: -ms-flexbox;
+    display: flex;
+      span {
+        margin-top: auto;
+        margin-left: auto;
+           min-width: 195px;
+        text-align: center;
+      }
+    }
+    
+    .title {
+      color: #000000;
+      font-family: "Futura PT - Demi";
+      font-size: 24px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: left;
+      margin-bottom: 10px;
+       position: relative;
+      z-index: 6;
+      background: rgba(255,255,255, .9);
+      display: inline;
+    }
+    p {
+      color: #888888;
+      font-family: "Futura PT - Demi";
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: left;
+      position: relative;
+      z-index: 6;
+    }
+  }  
+}
+
+.subjects {
+  padding: 65px 0 60px;
+  p {
+    color: #222222;
+    font-family: "Futura PT";
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 32px;
+    text-align: left;
+    margin-top: 43px;
+    a {
+      color: #e13838;
+      transition: .3s;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.school {
+  padding-top: 175px;
+  padding-bottom: 75px;
+}
+
+.school-img {
+  img {
+    max-width: 100%;
+  }
+  .text {
+    margin-top: 40px;
+    .title {
+      color: #000000;
+      font-family: "Futura PT - Demi";
+      font-size: 30px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: left;
+      margin-bottom: 33px;
+    }
+    p {
+      color: #000000;
+      font-family: "Futura PT";
+      font-size: 18px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 24px;
+      text-align: left;
+      margin-bottom: 0;
+      max-width: 290px;
+    }
+  }
+}
+
+.school-items {
+  padding-top: 95px;
+  padding-bottom: 95px;
+  padding-left: 140px;
+  position: relative;
+  &:before {
+    content: "";
+    background-color: #faefef;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .h2-title {
+    position: relative;
+    z-index: 4;
+  }
+  .item {
+     display: flex;
+    max-width: 450px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 3;
+  }
+  .img {
+    width: 158px;
+    margin-right: 38px;
+    &.photo-slider {
+      
+    }
+  }
+  .content {
+    padding-top: 33px;
+    position: relative;
+    color: #000000;
+    font-family: "Futura PT";
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: left;
+    &:before {
+      content: attr(data-numb);
+      color: #000000;
+      font-family: "Futura PT - Demi";
+      font-size: 12px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    b {
+      font-family: "Futura PT - Demi";
+    }
+  }
+}
+
+.photo-slider {
+//  max-width: 140px;
+  .slick-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-top: 22px;
+        line-height: 0;
+    li {
+      display: inline-block;
+      font-size: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #e2b4b4;
+      margin: 0 3.5px;
+      &.slick-active {
+        background-color: #e13838;
+      }
+      button {
+        border: 0;
+        background: 0 0;
+        font-size: 0;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.registration {
+  padding: 75px 0 120px;
+}
+
+.social-btn {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 42px;
+  max-width: 355px;
+  li {
+    display: block;
+    margin-bottom: 15px;
+    a {
+  display: block;
+      color: #ffffff;
+      font-family: "Futura PT - Demi";
+      font-size: 14px;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 17px;
+      transition: .3s;
+      &:hover {
+        transform: scale(.9);
+      }
+      svg {
+        fill: #fff;
+        margin-right: 15px;
+        max-width: 25px;
+        max-height: 25px;
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &.tg {
+        background-color: #00a8ff;
+      }
+      &.fb {
+        background-color: #0e74ff;
+      }
+      &.viber {
+        background-color: #665cac;
+      }
+      &.phone {
+        background-color: #e13838;
+      }
+    }
+  }
+}
+
+.registration-form {
+  max-width: 550px;
+  border: 4px solid #222222;
+  margin-left: auto;
+  padding: 52px 140px;
+  position: relative;
+  &:before, &:after {
+    content: '';
+    background: url('../images/rbg.png') repeat-y center;
+    width: 43px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &:after {
+    left: inherit;
+    right: 0;
+  }
+  .title {
+    color: #222222;
+    font-family: "Futura PT - Demi";
+    font-size: 26px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  p {
+    color: #222222;
+    font-family: "Futura PT";
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+  .form .label {
+    margin-bottom: 14px;
+    input {
+    padding: 11px 40px;
+    padding-left: 46px;
+    &[name='phone'] {
+        background-position: 22px center;
+        background-size: 14px;
+      }
+      &[name='name'] {
+        background-position: 22px center;
+        background-size: 14px;
+      }
+      
+  }
+  }
+    .order-btn {
+      margin-top:16px;
+    }
+}
+
+.footer {
+  padding-bottom: 19px;  
+  .menu li ul.lang {
+    margin-right: 170px;
+}
+}
+
+.soc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 8.5px;
+    a {
+      display: block;
+      transition: .4s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.footer_bottom {
+  background-color: #222222;
+  padding: 13px 0;
+}
+
+.footer_bottom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    &.margin010 {
+      margin: 0 10px;
+      
+    }
+    a {
+      color: #9f9f9f;
+      font-family: "Futura PT";
+      font-size: 14px;
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      text-align: left;
+      transition: .3s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.logo_rezart {
+  display: block;
+  text-align: right;
+  svg {
+    height: 18px;
+    path {
+      transition: .3s;
+    }
+    &:hover {
+      svg {
+        path {
+          fill: #e13838;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+  max-width: 550px;
+  border: 4px solid #222222;
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 68px;
+  padding-bottom: 72px;
+  .form .label {
+        margin-bottom: 14px;
+    input {
+    padding: 11px 40px;
+    padding-left: 46px;
+    &[name='phone'] {
+        background-position: 22px center;
+        background-size: 14px;
+      }
+      &[name='name'] {
+        background-position: 22px center;
+        background-size: 14px;
+      }
+      
+  }
+  }
+  form {
+    max-width: 255px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.large {
+    max-width: 768px;
+  }
+}
+
+.title-form {
+  color: #222222;
+  font-family: "Futura PT - Demi";
+  font-size: 26px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 1; 
+  text-align: left;
+  margin-bottom: 20px;
+  max-width: 255px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.success-item {
+  text-align: center;
+  h1 {
+    color: #000000;
+    font-family: "Futura PT - Demi";
+    font-size: 48px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  p {
+    color: #000000;
+    font-family: "Futura PT";
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .order-btn {
+    max-width: 258px;
+        padding: 14px 40px;
+  }
+}
+
+#nav-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  position: relative;
+  float: right;
+
+  &:after {
+    content: "";
+    width: 13px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:before {
+    content: "";
+    width: 13px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  span {
+    width: 13px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+
+.phone-mob {
+  display: none;
+}
+
+.xs-block {
+  display: none;
+}
+
+main {
+  overflow-x: hidden;
+}

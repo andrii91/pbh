@@ -1,0 +1,14 @@
+@import '../../mq';
+
+@media #{$tabletPortrait} {
+  @import '../mobile';
+
+  & {
+    .subjects-items .item {
+      min-width: 50%;
+    }
+
+
+
+  }
+}
